@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """ A python module """
 
-
 from flask import request
 from typing import List, TypeVar
 
 
 class Auth:
+    """ All authentication system implemented in this app"""
     def require_auth(self, path: str, excluded_paths: List[str]) -> bool:
         """ Checks ig a path requires authentication"""
         return False
