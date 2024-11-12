@@ -18,6 +18,7 @@ auth = None
 
 auth_type = getenv("AUTH_TYPE")
 
+
 if auth_type == "basic_auth":
     from api.v1.auth.basic_auth import BasicAuth
     auth = BasicAuth()
