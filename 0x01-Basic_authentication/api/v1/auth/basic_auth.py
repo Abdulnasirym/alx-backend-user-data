@@ -6,6 +6,7 @@ import base64
 import binascii
 from typing import TypeVar
 
+
 class BasicAuth(Auth):
     """ BasicAuth classinheriting from Auth """
     def extract_base64_authorization_header(
@@ -62,10 +63,7 @@ class BasicAuth(Auth):
         """ the class BasicAuth that returns
         the User instance based on his email and password.
         """
-        if user_email is None or not isinstance(user_email, str):
-            return None
-
-        if user_pwd is None or not isinstance(user_pwd, str):
+        if not all(map(lambda x: isinstance(x, str), (user_email, user_pwd))):
             return None
 
         try:
