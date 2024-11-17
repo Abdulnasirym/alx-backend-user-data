@@ -71,7 +71,7 @@ class BasicAuth(Auth):
             password is invalid.
         """
         # Return None if user_email or user_pwd is None or not a string
-        if not all(map(lambda x: isinstance(x, str), (user_email, user_pwd))):
+        if not user_email or not user_pwd:
             return None
         try:
             # Search for the user in the database
